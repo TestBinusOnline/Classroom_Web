@@ -15641,14 +15641,14 @@ var ASM_CONSTS = {
           HEAPU8[data+i] = bytes[i];
         }
         UnityHooks.data = data;
-        Runtime.dynCall('viiii', UnityHooks.OnStreamMessageCallback, [uid, 0, data, length]);
-        //Module['dynCall_viiiii'](UnityHooks.OnStreamMessageCallback, uid, 0, data, length);
+        //Runtime.dynCall('viiii', UnityHooks.OnStreamMessageCallback, [uid, 0, data, length]);
+        Module['dynCall_viiii'](UnityHooks.OnStreamMessageCallback, uid, 0, data, length);
       };
   
       UnityHooks.OnVideoSizeChangedCallback = OnVideoSizeChangedCallback;
       UnityHooks.InvokeVideoSizeChangedCallback = function(uid, width, height) {
-        Runtime.dynCall('viiii', UnityHooks.OnVideoSizeChangedCallback, [uid, width, height, 0]);
-        //Module['dynCall_viiiii'](UnityHooks.OnStreamMessageCallback, uid, 0, data, length);
+        //Runtime.dynCall('viiii', UnityHooks.OnVideoSizeChangedCallback, [uid, width, height, 0]);
+        Module['dynCall_viiii'](UnityHooks.OnStreamMessageCallback, uid, 0, data, length);
       };
   
       UnityHooks.isLoaded = true;
